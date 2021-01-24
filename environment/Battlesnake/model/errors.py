@@ -1,0 +1,4 @@
+
+
+class AgentTimeoutError(Exception):
+    pass

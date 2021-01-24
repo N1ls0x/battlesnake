@@ -1,0 +1,4 @@
+pygame>=1.9.6
+numpy>=1.19.2
+cherrypy>=18.6.0
+requests
