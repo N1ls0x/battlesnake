@@ -5,7 +5,7 @@ from environment.Battlesnake.server import BattlesnakeServer
 
 
 agent = FooooodAgent()
-port = 80
+port = 8080
 
 server = BattlesnakeServer(agent)
 cherrypy.config.update({"server.socket_host": "0.0.0.0"})
