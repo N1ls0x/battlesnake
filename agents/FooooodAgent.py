@@ -54,6 +54,7 @@ class FooooodAgent(BaseAgent):
             finder = AStarFinder()
             path, runs = finder.find_path(start, end, grid)
             if len(shortest_path) == 0 or (path and len(path) >= 2 and len(path) < len(shortest_path)):
+                #gucken ob genügent platz
                 shortest_path = path
 
         if shortest_path and len(shortest_path) >= 2:
@@ -75,3 +76,13 @@ class FooooodAgent(BaseAgent):
 
     def end(self, game_info: GameInfo, turn: int, board: BoardState, you: Snake):
         pass
+
+    def get_head(self):
+        # only for battlesnake online
+        # see https://docs.battlesnake.com/references/personalization
+        return "pixel"
+
+    def get_tail(self):
+        # only for battlesnake online
+        # see https://docs.battlesnake.com/references/personalization
+        return "pixel"
