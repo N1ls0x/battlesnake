@@ -42,9 +42,9 @@ class FooooodAgent(BaseAgent):
         p = you.get_head()
         matrix[p.y][p.x] = 1
 
-        print("Board")
-        for r in reversed(matrix):
-            print(r)
+        # print("Board")
+        # for r in reversed(matrix):
+        #     print(r)
 
         shortest_path = []
         for p in board.food:
