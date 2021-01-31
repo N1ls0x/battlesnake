@@ -22,7 +22,7 @@ class FooooodAgent(BaseAgent):
         return 'HungerOfHadar'
 
     def get_color(self) -> Optional[Tuple]:
-        return (11, 0, 107)
+        return (0, 0, 0)
 
     def start(self, game_info: GameInfo, turn: int, board: BoardState, you: Snake):
         pass
