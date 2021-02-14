@@ -46,31 +46,32 @@ class SpaceAgent(BaseAgent):
         # print("Board")
         # for r in reversed(matrix):
         #     print(r)
-
+        
         min_spaces: Dict[Direction, int] = dict()
         for d in you.possible_actions():
             min_spaces[d] = min_space(board, you, d)
+            shortest_path = []
 
-        shortest_path = []
         for p in board.food:
-            grid = Grid(matrix=matrix)
-            start = grid.node(you.body[0].x, you.body[0].y)
-            end = grid.node(p.x, p.y)
-            finder = AStarFinder()
-            path, runs = finder.find_path(start, end, grid)
+                grid = Grid(matrix=matrix)
+                start = grid.node(you.body[0].x, you.body[0].y)
+                end = grid.node(p.x, p.y)
+                finder = AStarFinder()
+                path, runs = finder.find_path(start, end, grid)
+        if  you.health < 30 or len(you.body) < 12:
             if path and len(path) >= 2 and (len(shortest_path) == 0 or len(path) < len(shortest_path)):
                 d = DirectionUtil.direction_to_reach_field(
                     Position(*path[0]), Position(*path[1]))
-                space = min_spaces[d]
-                print("space", space)
-                if space >= len(you.body):
-                    # gucken ob genügent platz
-                    shortest_path = path
+            space = min_spaces[d]
+            print("space", space)
+            if space >= len(you.body):
+               # gucken ob genügent platz
+                shortest_path = path
 
-        if shortest_path and len(shortest_path) >= 2:
-            d = DirectionUtil.direction_to_reach_field(
-                Position(*shortest_path[0]), Position(*shortest_path[1]))
-            return MoveResult(direction=d)
+            if shortest_path and len(shortest_path) >= 2:
+               d = DirectionUtil.direction_to_reach_field(
+                    Position(*shortest_path[0]), Position(*shortest_path[1]))
+               return MoveResult(direction=d)
 
         possible_actions = you.possible_actions()
 
