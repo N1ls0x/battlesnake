@@ -62,7 +62,7 @@ class SpaceAgent(BaseAgent):
                 d = DirectionUtil.direction_to_reach_field(
                     Position(*path[0]), Position(*path[1]))
                 space = min_spaces[d]
-                print("space", space)
+                #print("space", space)
                 if space >= len(you.body):
                     # gucken ob genügent platz
                     shortest_path = path
@@ -166,9 +166,9 @@ def flood_fill(state: BoardState, you: Snake) -> int:
                     nextp = p.advanced(d)
                     queue.append((snake, nextp))
 
-    print("Board")
-    for r in reversed(matrix):
-        print(r)
+    #print("Board")
+    #for r in reversed(matrix):
+    #    print(r)
 
     space = 0
     for row in matrix:
