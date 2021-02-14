@@ -1,10 +1,11 @@
 import cherrypy
 
+from agents.SpaceAgent import SpaceAgent
 from agents.FooooodAgent import FooooodAgent
 from environment.Battlesnake.server import BattlesnakeServer
 
 
-agent = FooooodAgent()
+agent = SpaceAgent()
 port = 8080
 
 server = BattlesnakeServer(agent)

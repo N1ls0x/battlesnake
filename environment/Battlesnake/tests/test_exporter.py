@@ -91,7 +91,7 @@ def test_full_replay_cycle():
 
     env.reset()
 
-    while not env.game.is_game_over():
+    while not env.game.is_game_over(env.game.board):
         env.step()
 
     assert os.path.exists(env.exporter.outpath)

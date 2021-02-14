@@ -19,7 +19,7 @@ from pathfinding.finder.a_star import AStarFinder
 class FooooodAgent(BaseAgent):
 
     def get_name(self):
-        return 'HungerOfHadar'
+        return 'FooooodAgent'
 
     def get_color(self) -> Optional[Tuple]:
         return (0, 0, 0)

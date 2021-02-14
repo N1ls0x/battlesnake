@@ -2,13 +2,14 @@ from environment.battlesnake_environment import BattlesnakeEnvironment, GameMode
 from agents.RemoteAgent import RemoteAgent
 from agents.RandomAgent import RandomAgent
 from agents.FooooodAgent import FooooodAgent
+from agents.SpaceAgent import SpaceAgent
 import time
 
 agents = [
     RandomAgent(),
     RandomAgent(),
-    RandomAgent(),
     FooooodAgent(),
+    SpaceAgent(),
 ]
 env = BattlesnakeEnvironment(
     width=11,
