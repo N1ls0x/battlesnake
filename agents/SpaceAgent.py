@@ -58,7 +58,7 @@ class SpaceAgent(BaseAgent):
                 end = grid.node(p.x, p.y)
                 finder = AStarFinder()
                 path, runs = finder.find_path(start, end, grid)
-        if  you.health < 30 or len(you.body) < 12 or len(snake.body) > 29 and len(you.body) < len(snake.body):
+        if  you.health < 35 or len(you.body) < 10 or len(snake.body) > 29 and len(you.body) < len(snake.body):
             if path and len(path) >= 2 and (len(shortest_path) == 0 or len(path) < len(shortest_path)):
                 d = DirectionUtil.direction_to_reach_field(
                     Position(*path[0]), Position(*path[1]))
