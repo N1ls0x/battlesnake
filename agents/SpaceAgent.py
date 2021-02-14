@@ -62,9 +62,9 @@ class SpaceAgent(BaseAgent):
             if path and len(path) >= 2 and (len(shortest_path) == 0 or len(path) < len(shortest_path)):
                 d = DirectionUtil.direction_to_reach_field(
                     Position(*path[0]), Position(*path[1]))
-<<<<<<< HEAD
+
             space = min_spaces[d]
-            print("space", space)
+            #print("space", space)
             if space >= len(you.body):
                # gucken ob genügent platz
                 shortest_path = path
@@ -73,18 +73,6 @@ class SpaceAgent(BaseAgent):
                d = DirectionUtil.direction_to_reach_field(
                     Position(*shortest_path[0]), Position(*shortest_path[1]))
                return MoveResult(direction=d)
-=======
-                space = min_spaces[d]
-                #print("space", space)
-                if space >= len(you.body):
-                    # gucken ob genügent platz
-                    shortest_path = path
-
-        if shortest_path and len(shortest_path) >= 2:
-            d = DirectionUtil.direction_to_reach_field(
-                Position(*shortest_path[0]), Position(*shortest_path[1]))
-            return MoveResult(direction=d)
->>>>>>> d1378eaf3622f4b2c68254876a161a9d64050be2
 
         possible_actions = you.possible_actions()
 
