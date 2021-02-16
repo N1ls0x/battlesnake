@@ -57,7 +57,7 @@ class SpaceAgent(BaseAgent):
                 start = grid.node(you.body[0].x, you.body[0].y)
                 end = grid.node(p.x, p.y)
                 finder = AStarFinder()
-                path, runs = finder.find_path(start, end, grid)
+                path, _runs = finder.find_path(start, end, grid)
                 
         max_enemy_len = 0
         for snake in board.snakes:
