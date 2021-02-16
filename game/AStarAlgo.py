@@ -1,6 +1,6 @@
 import heapq
 
-def aStar(self, grid, start, end):
+def aStar(self, graph, start, end):
     openList = set()
     closedList = set()
 
@@ -20,7 +20,7 @@ def aStar(self, grid, start, end):
             return retracePath(start)
         openList.remove(start)
         closedList.add(start)
-        for tile in grid[start]:
+        for tile in graph[start]:
             if tile not in closedList:
                 tile.H = (abs(end.x-tile.x)+abs(end.y-tile.y))*10 
                 openList.add(tile)
