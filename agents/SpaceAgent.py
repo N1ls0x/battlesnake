@@ -65,8 +65,8 @@ class SpaceAgent(BaseAgent):
         #        if len(snake.body) > max_enemy_len:
         #            max_enemy_len = len(snake.body)
                 
-        if you.health < 35 or len(you.body) < 11 or len(you.body):
-            # <= max_enemy_len:
+        if you.health < 35 or len(you.body) < 11:
+        # or len(you.body) <= max_enemy_len:
             if path and len(path) >= 2 and (len(shortest_path) == 0 or len(path) < len(shortest_path)):
                 d = DirectionUtil.direction_to_reach_field(
                     Position(*path[0]), Position(*path[1]))
