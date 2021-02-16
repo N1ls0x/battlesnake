@@ -120,10 +120,10 @@ def min_space(state: BoardState, you: Snake, you_action: Direction) -> int:
     min_space = state.width * state.height
     enemy_list = []
     enemies = []
-    #if len(state.snakes) > 3:
-    #    state = state.clone()
-    #    farest_snake = sorted(state.snakes , key=lambda s: distance(s.get_head(), you.get_head()))[-1]
-    #    state.snakes.remove(farest_snake)
+    if len(state.snakes) > 3:
+        state = state.clone()
+        farest_snake = sorted(state.snakes , key=lambda s: distance(s.get_head(), you.get_head()))[-1]
+        state.snakes.remove(farest_snake)
 
     for snake in state.snakes:
         if snake.snake_id != you.snake_id:
