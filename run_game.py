@@ -6,8 +6,8 @@ from agents.SpaceAgent import SpaceAgent
 import time
 
 agents = [
-    RandomAgent(),
-    RandomAgent(),
+    FooooodAgent(),
+    FooooodAgent(),
     FooooodAgent(),
     SpaceAgent(),
 ]
