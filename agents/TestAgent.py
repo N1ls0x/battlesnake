@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict,Optional,Tuple
 from agents.BaseAgent import BaseAgent
 import numpy as np
 from environment.Battlesnake.model.GameInfo import GameInfo
@@ -16,13 +16,14 @@ class TestAgent(BaseAgent):
         return 'Test'
     
     def get_color(self) -> Optional[Tuple]:
-        return (0, 0, 0)
+        return (0, 127, 0)
 
     def start(self, game_info: GameInfo, turn: int, board: BoardState, you: Snake):
         pass
 
     def move(self, game_info: GameInfo, turn: int, board: BoardState, you: Snake) -> MoveResult:
         pass
+
     def end(self, game_info: GameInfo, turn: int, board: BoardState, you: Snake):
         pass
 
