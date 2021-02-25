@@ -3,11 +3,11 @@ from agents.RemoteAgent import RemoteAgent
 from agents.RandomAgent import RandomAgent
 from agents.FooooodAgent import FooooodAgent
 from agents.SpaceAgent import SpaceAgent
-from agents.TestAgent import TestAgent
+from agents.PatrickAgent import PatrickAgent
 import time
 
 agents = [
-    TestAgent(),
+    PatrickAgent(),
     FooooodAgent(),
     FooooodAgent(),
     SpaceAgent(),
