@@ -7,7 +7,7 @@ from agents.PatrickAgent import PatrickAgent
 import time
 
 agents = [
-    PatrickAgent(),
+    FooooodAgent(),
     FooooodAgent(),
     FooooodAgent(),
     SpaceAgent(),
