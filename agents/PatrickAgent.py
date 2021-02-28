@@ -17,7 +17,7 @@ class PatrickAgent(BaseAgent):
         return 'Patrick'
     
     def get_color(self) -> Optional[Tuple]:
-        return (0, 127, 20)
+        return (0, 128, 20)
 
     def start(self, game_info: GameInfo, turn: int, board: BoardState, you: Snake):
         pass
