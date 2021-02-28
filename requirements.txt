@@ -3,3 +3,4 @@ numpy>=1.19.2
 cherrypy>=18.6.0
 requests
 pathfinding
+pytest
