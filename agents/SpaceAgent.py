@@ -17,6 +17,8 @@ from environment.Battlesnake.modes.Standard import StandardGame
 from pathfinding.core.grid import Grid
 from pathfinding.finder.a_star import AStarFinder
 
+from agents.algorithms.floodfill import flood_fill
+
 
 class SpaceAgent(BaseAgent):
 
@@ -59,14 +61,8 @@ class SpaceAgent(BaseAgent):
                 finder = AStarFinder()
                 path, _runs = finder.find_path(start, end, grid)
                 
-        #max_enemy_len = 0
-        #for snake in board.snakes:
-        #    if snake.snake_id != you.snake_id:
-        #        if len(snake.body) > max_enemy_len:
-        #            max_enemy_len = len(snake.body)
                 
         if you.health < 35 or len(you.body) < 11:
-        # or len(you.body) <= max_enemy_len:
             if path and len(path) >= 2 and (len(shortest_path) == 0 or len(path) < len(shortest_path)):
                 d = DirectionUtil.direction_to_reach_field(
                     Position(*path[0]), Position(*path[1]))
@@ -140,54 +136,3 @@ def min_space(state: BoardState, you: Snake, you_action: Direction) -> int:
         if space < min_space:
             min_space = space
     return min_space
-
-
-def flood_fill(state: BoardState, you: Snake) -> int:
-    queue = []
-    for snake in state.snakes:
-        if snake.snake_id == you.snake_id:
-            queue.append((1, snake.get_head()))
-
-    if not queue:
-        return 0  # we are dead
-
-    for snake in state.snakes:
-        if snake.snake_id != you.snake_id:
-            if len(snake.body) >= len(you.body):
-                queue.insert(0, (2, snake.get_head()))
-            else:
-                queue.append((2, snake.get_head()))
-
-    if len(queue) == 1:
-        return state.width * state.width
-
-    matrix = [[0] * state.width for i in range(state.height)]
-    for snake in state.snakes:
-        for p in snake.body[1:]:
-            matrix[p.y][p.x] = 3
-
-    while queue:
-        snake, p = queue.pop(0)
-        if 0 <= p.x < state.width and 0 <= p.y < state.height:
-            if matrix[p.y][p.x] == 0:
-                matrix[p.y][p.x] = snake
-                for d in Direction:
-                    nextp = p.advanced(d)
-                    queue.append((snake, nextp))
-
-    #print("Board")
-    #for r in reversed(matrix):
-    #    print(r)
-
-    space = 0
-    for row in matrix:
-        for cell in row:
-            if cell == 1:
-                space += 1
-
-    return space
-
-
-def test_flood_fill():
-    print("Hello World")
-    assert False

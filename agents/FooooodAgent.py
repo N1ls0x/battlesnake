@@ -52,7 +52,7 @@ class FooooodAgent(BaseAgent):
             start = grid.node(you.body[0].x, you.body[0].y)
             end = grid.node(p.x, p.y)
             finder = AStarFinder()
-            path, runs = finder.find_path(start, end, grid)
+            path, _runs = finder.find_path(start, end, grid)
             if len(shortest_path) == 0 or (path and len(path) >= 2 and len(path) < len(shortest_path)):
                 #gucken ob genügent platz
                 shortest_path = path

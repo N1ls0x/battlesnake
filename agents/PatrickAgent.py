@@ -23,9 +23,9 @@ class PatrickAgent(BaseAgent):
         pass
 
     def move(self, game_info: GameInfo, turn: int, board: BoardState, you: Snake) -> MoveResult:
-        possible_moves = ["up", "down", "left", "right"]
-        random.choice(possible_moves)
-        MoveResult(possible_moves)
+        move = random.choice(list(Direction))
+        print(move)
+        return MoveResult(direction=move)
 
     def end(self, game_info: GameInfo, turn: int, board: BoardState, you: Snake):
         pass
