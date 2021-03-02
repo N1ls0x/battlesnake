@@ -99,12 +99,12 @@ class SpaceAgent(BaseAgent):
     def get_head(self):
         # only for battlesnake online
         # see https://docs.battlesnake.com/references/personalization
-        return "sneaky"
+        return "chomp"
 
     def get_tail(self):
         # only for battlesnake online
         # see https://docs.battlesnake.com/references/personalization
-        return "swoop"
+        return "ghost"
 
 
 def distance(a: Position, b: Position) -> int:
