@@ -40,8 +40,8 @@ def flood_fill(state: BoardState, you: Snake) -> int:
                     nextp = p.advanced(d)
                     queue.append((snake, nextp))
 
-    #print("Board")
-    #for r in reversed(matrix):
+    # print("Board")
+    # for r in reversed(matrix):
     #    print(r)
 
     space = 0
